@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1f6f68">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Seven Cycle">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Seven Cycle</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <img class="brand-mark" src="assets/icon.svg" alt="" width="56" height="56">
+          <div>
+            <p class="kicker">Daily picker</p>
+            <h1>Seven Cycle</h1>
+          </div>
+        </div>
+        <div class="today-pill" id="todayLabel">Today</div>
+      </header>
+
+      <main class="app-main">
+        <section class="play-surface" aria-labelledby="play-title">
+          <div class="surface-head">
+            <div>
+              <p class="kicker">Cycle board</p>
+              <h2 id="play-title">One draw per day</h2>
+            </div>
+            <p class="cycle-summary" id="cycleSummary">Day 1 of 7</p>
+          </div>
+
+          <div class="cycle-track" id="cycleTrack" aria-label="Seven day cycle progress"></div>
+
+          <div class="result-stage" aria-live="polite">
+            <p class="result-label" id="resultLabel">Ready</p>
+            <div class="choice-result" id="choiceResult">Tap Play</div>
+            <p class="result-note" id="resultNote">One chance is available today.</p>
+          </div>
+
+          <div class="play-actions">
+            <button class="primary-action" id="playButton" type="button">
+              <span class="button-mark" aria-hidden="true"></span>
+              <span>Play</span>
+            </button>
+            <button class="secondary-action" id="resetCycleButton" type="button">Reset Cycle</button>
+          </div>
+        </section>
+
+        <section class="choice-panel" aria-labelledby="choice-title">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Your seven</p>
+              <h2 id="choice-title">Choices</h2>
+            </div>
+            <p class="save-status" id="saveStatus" role="status"></p>
+          </div>
+
+          <form class="choices-grid" id="choicesForm">
+            <label class="choice-field">
+              <span>1</span>
+              <input id="choice-0" name="choice-0" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>2</span>
+              <input id="choice-1" name="choice-1" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>3</span>
+              <input id="choice-2" name="choice-2" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>4</span>
+              <input id="choice-3" name="choice-3" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>5</span>
+              <input id="choice-4" name="choice-4" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>6</span>
+              <input id="choice-5" name="choice-5" maxlength="48" autocomplete="off">
+            </label>
+            <label class="choice-field">
+              <span>7</span>
+              <input id="choice-6" name="choice-6" maxlength="48" autocomplete="off">
+            </label>
+            <div class="editor-actions">
+              <button class="save-action" type="submit">Save Choices</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="history-panel" aria-labelledby="history-title">
+          <div class="section-head">
+            <div>
+              <p class="kicker">This cycle</p>
+              <h2 id="history-title">Seven days</h2>
+            </div>
+            <p class="remaining-pill" id="remainingPill">7 hidden</p>
+          </div>
+          <ol class="history-list" id="historyList"></ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
